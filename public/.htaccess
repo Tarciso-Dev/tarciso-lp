@@ -1,0 +1,6 @@
+# Apache / cPanel — charset UTF-8 em respostas de texto/HTML
+AddDefaultCharset UTF-8
+
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .html .htm .css .js .json .svg .txt .xml
+</IfModule>

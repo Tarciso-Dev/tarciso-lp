@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="775.89227"
+   height="542.69446"
+   viewBox="0 0 205.28816 143.58791"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="inomeado.svg"
+   inkscape:export-filename="tarciso_heli_logo_black.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="246.07316"
+     inkscape:cy="608.11183"
+     inkscape:window-width="1150"
+     inkscape:window-height="990"
+     inkscape:window-x="287"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="205.28816"
+       height="143.58791"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch12"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#28170b;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+    </linearGradient>
+    <rect
+       x="141.42136"
+       y="231.93102"
+       width="302.64169"
+       height="291.328"
+       id="rect4" />
+    <rect
+       x="141.42136"
+       y="231.93102"
+       width="302.64169"
+       height="291.328"
+       id="rect4-4" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-45.345897,-59.384106)">
+    <g
+       id="g28"
+       style="fill:#ffffff">
+      <g
+         id="g5"
+         style="fill:#ffffff;fill-opacity:1">
+        <text
+           xml:space="preserve"
+           transform="matrix(2.8272226,0,0,2.8272226,-356.99659,-617.34388)"
+           id="text4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.0287px;font-family:Amiri;-inkscape-font-specification:Amiri;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#ffffff"><tspan
+             x="141.42188"
+             y="288.51643"
+             id="tspan2">T</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:209.197px;font-family:Amiri;-inkscape-font-specification:Amiri;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke-width:3.80076"
+           x="73.363083"
+           y="198.3228"
+           id="text5"><tspan
+             sodipodi:role="line"
+             id="tspan5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:209.197px;font-family:Amiri;-inkscape-font-specification:Amiri;fill:#ffffff;stroke-width:3.80076"
+             x="73.363083"
+             y="198.3228">H</tspan></text>
+      </g>
+      <g
+         id="g5-2"
+         style="fill:#ffffff;fill-opacity:1"
+         transform="rotate(180,147.98998,131.17806)">
+        <text
+           xml:space="preserve"
+           transform="matrix(2.8272226,0,0,2.8272226,-356.99659,-617.34388)"
+           id="text4-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.0287px;font-family:Amiri;-inkscape-font-specification:Amiri;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4-4);display:inline;fill:#ffffff"><tspan
+             x="141.42188"
+             y="288.51643"
+             id="tspan3">T</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:209.197px;font-family:Amiri;-inkscape-font-specification:Amiri;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke-width:3.80076"
+           x="73.363083"
+           y="198.3228"
+           id="text5-5"><tspan
+             sodipodi:role="line"
+             id="tspan5-5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:209.197px;font-family:Amiri;-inkscape-font-specification:Amiri;fill:#ffffff;stroke-width:3.80076"
+             x="73.363083"
+             y="198.3228">H</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
