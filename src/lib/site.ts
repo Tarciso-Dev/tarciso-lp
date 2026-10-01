@@ -10,20 +10,6 @@ export function whatsappHref(message: string) {
 const defaultWhatsappMessage =
   "Olá, quero saber mais sobre sites e atendimento no WhatsApp."
 
-export function formatBrl(value: number) {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    maximumFractionDigits: 0,
-  })
-    .format(value)
-    .replaceAll("\u00A0", " ")
-}
-
-export function formatFromPrice(setup: number, monthly: number) {
-  return `a partir de ${formatBrl(setup)} + ${formatBrl(monthly)}/mês`
-}
-
 export const caseKindLabel = {
   cliente: "Cliente",
   modelo: "Modelo de demonstração",
@@ -183,12 +169,8 @@ export const site = {
   offersSection: {
     title: "Ofertas para o comércio local",
     intro:
-      "Dois caminhos, com valor a partir de. O escopo fecha na conversa, sem pacote surpresa.",
-    conditions: "50% para começar, 50% na entrega.",
-  },
-  pricing: {
-    presenca: { setup: 3000, monthly: 120 },
-    atendimento: { setup: 5500, monthly: 350 },
+      "Dois caminhos. Abaixo, o que entra em cada um e o que pode mudar para quem contrata. O valor fecha na conversa.",
+    resultsLabel: "Resultados possíveis",
   },
   offers: [
     {
@@ -196,6 +178,11 @@ export const site = {
       title: "Presença digital",
       summary:
         "Site de uma página, placa de avaliação 10×15 cm personalizada com QR code dinâmico e NFC, e ajuste do perfil no Google (Google Meu Negócio).",
+      results: [
+        "Quem pesquisa no Google encontra o negócio, com endereço e caminho até o WhatsApp",
+        "A placa no balcão pede a avaliação no momento do atendimento",
+        "O destino do QR muda depois, sem imprimir outra placa",
+      ],
       message:
         "Olá, quero saber mais sobre a oferta Presença digital (site, placa de avaliação com QR e NFC, e Google).",
     },
@@ -204,6 +191,11 @@ export const site = {
       title: "Atendimento no WhatsApp",
       summary:
         "Central de atendimento para várias pessoas no mesmo WhatsApp, mensagens automáticas, agenda online e site.",
+      results: [
+        "Mais de uma pessoa atende o mesmo número, cada conversa no seu lugar",
+        "Perguntas que se repetem recebem resposta na hora, e o restante segue para quem precisa",
+        "O cliente escolhe um horário na agenda, sem ficar esperando resposta",
+      ],
       message:
         "Olá, quero saber mais sobre a oferta Atendimento no WhatsApp.",
     },

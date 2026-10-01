@@ -65,29 +65,11 @@ export const seo = {
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Ofertas",
-          itemListElement: site.offers.map((offer) => {
-            const price = site.pricing[offer.id]
-            return {
-              "@type": "Offer",
-              name: offer.title,
-              description: offer.summary,
-              priceCurrency: "BRL",
-              priceSpecification: [
-                {
-                  "@type": "PriceSpecification",
-                  minPrice: price.setup,
-                  priceCurrency: "BRL",
-                  description: "Implantação, a partir de",
-                },
-                {
-                  "@type": "PriceSpecification",
-                  minPrice: price.monthly,
-                  priceCurrency: "BRL",
-                  description: "Mensalidade, a partir de",
-                },
-              ],
-            }
-          }),
+          itemListElement: site.offers.map((offer) => ({
+            "@type": "Offer",
+            name: offer.title,
+            description: `${offer.summary} Resultados possíveis: ${offer.results.join("; ")}.`,
+          })),
         },
       },
     ],

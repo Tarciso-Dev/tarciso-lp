@@ -1,4 +1,4 @@
-import { formatFromPrice, site } from "@/lib/site"
+import { site } from "@/lib/site"
 
 import { CtaButtons } from "./cta-buttons"
 
@@ -19,28 +19,34 @@ export function OffersSection() {
         </div>
 
         <ul className="grid gap-5 md:grid-cols-2">
-          {site.offers.map((offer) => {
-            const price = site.pricing[offer.id]
-            return (
-              <li key={offer.id} className="min-w-0">
-                <article className="service-card flex h-full flex-col gap-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10 md:p-6">
-                  <h3 className="text-xl md:text-2xl">{offer.title}</h3>
-                  <p className="text-muted-foreground">{offer.summary}</p>
-                  <p className="text-2xl font-medium text-primary">
-                    {formatFromPrice(price.setup, price.monthly)}
-                  </p>
-                  <p className="text-foreground">{site.offersSection.conditions}</p>
-                  <CtaButtons
-                    className="mt-auto"
-                    size="default"
-                    layout="stack"
-                    whatsappMessage={offer.message}
-                    showPhoneEmail={false}
-                  />
-                </article>
-              </li>
-            )
-          })}
+          {site.offers.map((offer) => (
+            <li key={offer.id} className="min-w-0">
+              <article className="service-card flex h-full flex-col gap-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10 md:p-6">
+                <h3 className="text-xl md:text-2xl">{offer.title}</h3>
+                <p className="text-muted-foreground">{offer.summary}</p>
+                <div className="flex flex-col gap-3">
+                  <p className="section-label">{site.offersSection.resultsLabel}</p>
+                  <ul className="flex flex-col gap-3 text-foreground">
+                    {offer.results.map((result) => (
+                      <li key={result} className="flex gap-3">
+                        <span aria-hidden className="text-primary">
+                          +
+                        </span>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <CtaButtons
+                  className="mt-auto"
+                  size="default"
+                  layout="stack"
+                  whatsappMessage={offer.message}
+                  showPhoneEmail={false}
+                />
+              </article>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
