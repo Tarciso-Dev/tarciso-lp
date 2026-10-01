@@ -117,8 +117,7 @@ export const site = {
       imageHeight: 800,
       imageMobileWidth: 390,
       imageMobileHeight: 844,
-      // Cliente real: só publicar depois da autorização do cliente (Tarciso confirma).
-      published: false,
+      published: true,
     },
     {
       id: "barbearia",
@@ -165,6 +164,21 @@ export const site = {
       imageMobileHeight: 844,
       published: true,
     },
+    {
+      id: "painel",
+      title: "QR SaaS",
+      kind: "produto" as const,
+      url: "https://painel.tarciso.dev/",
+      summary:
+        "Painel para criar QR codes, acompanhar leituras em tempo real e organizar campanhas.",
+      image: "/cases/painel.webp",
+      imageMobile: "/cases/painel-mobile.webp",
+      imageWidth: 1280,
+      imageHeight: 800,
+      imageMobileWidth: 390,
+      imageMobileHeight: 844,
+      published: true,
+    },
   ],
   offersSection: {
     title: "Ofertas para o comércio local",
@@ -172,19 +186,18 @@ export const site = {
       "Dois caminhos, com valor a partir de. O escopo fecha na conversa, sem pacote surpresa.",
     conditions: "50% para começar, 50% na entrega.",
   },
-  // Valores sugeridos, validar com o Tarciso antes de publicar
   pricing: {
-    presenca: { setup: 1500, monthly: 120 },
-    atendimento: { setup: 2500, monthly: 350 },
+    presenca: { setup: 3000, monthly: 120 },
+    atendimento: { setup: 5500, monthly: 350 },
   },
   offers: [
     {
       id: "presenca" as const,
       title: "Presença digital",
       summary:
-        "Site de uma página, QR code para o balcão com arte e ajuste do perfil no Google (Google Meu Negócio).",
+        "Site de uma página, placa de avaliação 10×15 cm personalizada com QR code dinâmico e NFC, e ajuste do perfil no Google (Google Meu Negócio).",
       message:
-        "Olá, quero saber mais sobre a oferta Presença digital (site, QR code e Google).",
+        "Olá, quero saber mais sobre a oferta Presença digital (site, placa de avaliação com QR e NFC, e Google).",
     },
     {
       id: "atendimento" as const,

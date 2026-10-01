@@ -21,7 +21,7 @@ export function CasesSection() {
           <p className="text-muted-foreground">{site.casesSection.intro}</p>
         </div>
 
-        <ul className="grid gap-5 md:grid-cols-3">
+        <ul className="grid gap-5 md:grid-cols-2">
           {visible.map((item) => (
             <li key={item.id} className="min-w-0">
               <article className="service-card flex h-full flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
