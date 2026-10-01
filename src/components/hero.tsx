@@ -32,11 +32,12 @@ export function Hero() {
                 {site.name} ·{" "}
                 <a
                   href={site.siteUrl}
-                  className="text-primary underline-offset-4 hover:underline"
+                  className="rounded-sm text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   tarciso.dev
+                  <span className="sr-only"> (abre em nova aba)</span>
                 </a>
               </p>
               <SocialLinks className="-ml-1" />

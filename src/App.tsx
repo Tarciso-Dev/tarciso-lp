@@ -5,8 +5,15 @@ import { Hero } from "@/components/hero"
 import { Logo } from "@/components/logo"
 import { MobileNav } from "@/components/mobile-nav"
 import { SeoHead } from "@/components/seo-head"
+import { mainNav } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
+const CasesSection = lazy(() =>
+  import("@/components/cases-section").then((m) => ({ default: m.CasesSection }))
+)
+const OffersSection = lazy(() =>
+  import("@/components/offers-section").then((m) => ({ default: m.OffersSection }))
+)
 const Services = lazy(() =>
   import("@/components/services").then((m) => ({ default: m.Services }))
 )
@@ -26,7 +33,7 @@ const Footer = lazy(() =>
 )
 
 const navLinkClass =
-  "inline-flex min-h-11 items-center px-2 text-muted-foreground hover:text-foreground"
+  "inline-flex min-h-11 items-center rounded-sm px-2 text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
 
 function App() {
   return (
@@ -40,31 +47,21 @@ function App() {
         >
           <Logo variant="light" />
         </a>
-        <nav aria-label="Principal" className="hidden md:block">
+        <nav aria-label="Seções da página" className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            <li>
-              <a href="#servicos" className={navLinkClass}>
-                Serviços
-              </a>
-            </li>
-            <li>
-              <a href="#sobre" className={navLinkClass}>
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a href="#como-ajudo" className={navLinkClass}>
-                Como ajudo
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contato"
-                className={cn(navLinkClass, "text-primary hover:underline")}
-              >
-                Contato
-              </a>
-            </li>
+            {mainNav.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={cn(
+                    navLinkClass,
+                    "primary" in link && link.primary && "text-primary hover:underline"
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <MobileNav />
@@ -72,6 +69,8 @@ function App() {
       <main>
         <Hero />
         <Suspense fallback={null}>
+          <CasesSection />
+          <OffersSection />
           <Services />
           <AboutSection />
           <ProblemSolution />

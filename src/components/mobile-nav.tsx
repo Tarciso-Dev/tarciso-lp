@@ -1,14 +1,8 @@
 import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
+import { mainNav } from "@/lib/site"
 import { cn } from "@/lib/utils"
-
-const links: { href: string; label: string; primary?: boolean }[] = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#como-ajudo", label: "Como ajudo" },
-  { href: "#contato", label: "Contato", primary: true },
-]
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
@@ -27,10 +21,10 @@ export function MobileNav() {
   }, [open])
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
-        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-border text-foreground"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-border text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -53,15 +47,18 @@ export function MobileNav() {
             aria-label="Fechar menu"
             onClick={() => setOpen(false)}
           />
-          <nav className="absolute top-0 right-0 flex h-full w-[min(100%,18rem)] flex-col gap-1 border-l border-border bg-background p-4 pt-16 shadow-xl">
+          <nav
+            aria-label="Seções da página"
+            className="absolute top-0 right-0 flex h-full w-[min(100%,18rem)] flex-col gap-1 border-l border-border bg-background p-4 pt-16 shadow-xl"
+          >
             <ul className="flex flex-col gap-1">
-              {links.map((link) => (
+              {mainNav.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     className={cn(
-                      "flex min-h-11 items-center rounded-lg px-3",
-                      link.primary
+                      "flex min-h-11 items-center rounded-lg px-3 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                      "primary" in link && link.primary
                         ? "text-primary"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     )}

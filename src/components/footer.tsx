@@ -19,7 +19,7 @@ export function Footer() {
             </p>
             <a
               href={site.privacyPolicyUrl}
-              className="hover:text-primary hover:underline"
+              className="inline-flex min-h-11 items-center rounded-sm hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               Política de Privacidade
             </a>
@@ -31,22 +31,24 @@ export function Footer() {
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    className="hover:text-primary hover:underline"
+                    className="inline-flex min-h-11 items-center rounded-sm hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {item.label}
+                    <span className="sr-only"> (abre em nova aba)</span>
                   </a>
                 </li>
               ))}
             </ul>
             <a
               href={site.siteUrl}
-              className="text-primary underline-offset-4 hover:underline"
+              className="inline-flex min-h-11 items-center rounded-sm text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
               target="_blank"
               rel="noopener noreferrer"
             >
               tarciso.dev
+              <span className="sr-only"> (abre em nova aba)</span>
             </a>
           </div>
         </div>
