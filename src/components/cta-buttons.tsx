@@ -1,55 +1,96 @@
-import { MessageCircle, Mail, Phone } from "lucide-react"
+import { CalendarDays, Mail, MessageCircle, Phone } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
-import { site } from "@/lib/site"
+import { site, whatsappHref } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 type CtaButtonsProps = {
   size?: "default" | "lg"
   className?: string
+  whatsappMessage?: string
+  showPhoneEmail?: boolean
+  layout?: "inline" | "stack"
 }
 
-export function CtaButtons({ size = "lg", className }: CtaButtonsProps) {
+export function CtaButtons({
+  size = "lg",
+  className,
+  whatsappMessage,
+  showPhoneEmail = true,
+  layout = "inline",
+}: CtaButtonsProps) {
   const btnSize = size === "lg" ? "lg" : "default"
+  const stacked = layout === "stack"
+  const whatsappLink = whatsappMessage
+    ? whatsappHref(whatsappMessage)
+    : site.whatsapp.href
 
   return (
     <div
       className={cn(
-        "flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center",
+        "flex flex-col gap-3",
+        !stacked && "sm:flex-row sm:flex-wrap sm:items-center",
         className
       )}
     >
       <a
-        href={site.whatsapp.href}
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={cn(buttonVariants({ size: btnSize }), "min-h-11")}
+        className={cn(
+          buttonVariants({ size: btnSize }),
+          "min-h-11",
+          stacked && "w-full"
+        )}
       >
         <MessageCircle data-icon="inline-start" aria-hidden />
         {site.whatsapp.label}
+        <span className="sr-only"> (abre em nova aba)</span>
       </a>
-      <div className="flex flex-col gap-2 sm:flex-row">
-        <span className="sr-only">{site.contact.scheduleLabel}</span>
+      <div
+        className={cn(
+          "flex flex-col gap-2",
+          stacked ? "w-full" : "sm:flex-row sm:flex-wrap"
+        )}
+      >
         <a
-          href={`tel:${site.contact.phone}`}
+          href={site.contact.scheduleUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn(
             buttonVariants({ variant: "outline", size: btnSize }),
-            "min-h-11"
+            "min-h-11",
+            stacked && "w-full"
           )}
         >
-          <Phone data-icon="inline-start" aria-hidden />
-          {site.contact.phoneLabel}
+          <CalendarDays data-icon="inline-start" aria-hidden />
+          {site.contact.scheduleLabel}
+          <span className="sr-only"> (abre em nova aba)</span>
         </a>
-        <a
-          href={`mailto:${site.contact.email}`}
-          className={cn(
-            buttonVariants({ variant: "outline", size: btnSize }),
-            "min-h-11"
-          )}
-        >
-          <Mail data-icon="inline-start" aria-hidden />
-          {site.contact.emailLabel}
-        </a>
+        {showPhoneEmail ? (
+          <>
+            <a
+              href={`tel:${site.contact.phone}`}
+              className={cn(
+                buttonVariants({ variant: "outline", size: btnSize }),
+                "min-h-11"
+              )}
+            >
+              <Phone data-icon="inline-start" aria-hidden />
+              {site.contact.phoneLabel}
+            </a>
+            <a
+              href={`mailto:${site.contact.email}`}
+              className={cn(
+                buttonVariants({ variant: "outline", size: btnSize }),
+                "min-h-11"
+              )}
+            >
+              <Mail data-icon="inline-start" aria-hidden />
+              {site.contact.emailLabel}
+            </a>
+          </>
+        ) : null}
       </div>
     </div>
   )
