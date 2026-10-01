@@ -1,3 +1,5 @@
+import { site } from "./site"
+
 export const privacyPolicy = {
   path: "/politica-privacidade",
   url: "https://tarciso.dev/politica-privacidade",
@@ -199,7 +201,7 @@ export const privacyPolicySections: PrivacyBlock[] = [
       {
         type: "list",
         items: [
-          "Responsável/Encarregado pelo Tratamento de Dados: Tarciso Heli",
+          `Responsável/Encarregado pelo Tratamento de Dados: ${site.name}`,
           "E-mail de Contato: contato@tarciso.dev",
           "Endereço Web: https://tarciso.dev",
         ],

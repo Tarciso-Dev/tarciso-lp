@@ -1,4 +1,4 @@
-# Landing page — Tarciso Heli
+# Landing page — Tarciso Junior
 
 Landing page em React + Vite + shadcn/ui.
 
